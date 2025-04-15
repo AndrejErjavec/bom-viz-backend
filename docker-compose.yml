@@ -1,0 +1,19 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - 6333:6333
+      - 6334:6334
+    volumes:
+      - ./qdrant_storage:/qdrant/storage:z
+  mongodb:
+    image: 	mongodb/mongodb-community-server:latest
+    ports:
+      - 27017:27017
+
+#  tomcat:
+#    image: tomcat:9.0.102-jdk8-corretto
+#    ports:
+#      - "8080:8080"
+#    volumes:
+#      - ./target/:/usr/local/tomcat/webapps/
